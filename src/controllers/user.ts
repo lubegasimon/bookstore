@@ -1,13 +1,8 @@
-// const model = require("../models");
 import db from "../models/index";
-// import { User } from "../models/user";
-
-// const { User } = models;
-
 export class Users {
-  static async signUp(req, res) /*: Promise<User>*/ {
+  static signUp(req, res) {
     const { username, email, password } = req.body;
-    return await db.User.create({ username, email, password }).then(userData =>
+    return db.User.create({ username, email, password }).then(userData =>
       res.send({
         success: "OK",
         msg: "User is successfully created",
@@ -16,7 +11,7 @@ export class Users {
     );
   }
 
-  static list(_req, res) {
-    return db.User.findAll().then(users => res.send(users));
+  static async list(_req, res) {
+    return await db.User.findAll().then(users => res.send(users));
   }
 }
