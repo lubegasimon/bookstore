@@ -2,10 +2,12 @@
   "name": "bookstore",
   "version": "1.0.0",
   "description": "A store for your books to read",
-  "main": "index.js",
+  "main": "dist/server.js",
   "scripts": {
-    "prettier": "npx prettier --write ./**/*.js", 
-    "start": "nodemon server.js",
+    "compile": "tsc --project tsconfig.json",
+    "dev": "npm run compile && npm run start",
+    "prettier": "prettier-tslint fix src/**/*.ts",
+    "start": "npm run compile && nodemon ./dist/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -24,6 +26,7 @@
   },
   "homepage": "https://github.com/lubegasimon/bookstore#readme",
   "dependencies": {
+    "bluebird": "^3.5.5",
     "body-parser": "^1.19.0",
     "dotenv": "^8.0.0",
     "express": "^4.17.1",
@@ -32,14 +35,23 @@
     "sequelize": "^5.12.0"
   },
   "devDependencies": {
+    "@types/bluebird": "^3.5.27",
+    "@types/body-parser": "^1.17.0",
+    "@types/express": "^4.17.0",
+    "@types/node": "^12.7.0",
+    "@types/sequelize": "^4.28.4",
     "husky": "^3.0.2",
     "nodemon": "^1.19.1",
     "prettier": "1.18.2",
-    "pretty-quick": "^1.11.1"
+    "prettier-tslint": "^0.4.2",
+    "pretty-quick": "^1.11.1",
+    "ts-node": "^8.3.0",
+    "tslint": "^5.18.0",
+    "typescript": "^3.5.3"
   },
   "husky": {
     "hooks": {
       "pre-commit": "pretty-quick --staged"
-      }
+    }
   }
 }

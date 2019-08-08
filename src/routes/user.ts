@@ -1,6 +1,6 @@
-const Users = require("../controllers/user");
+import { Users } from "../controllers/user";
 
-module.exports = app => {
+export = app => {
   app.get("/", (_req, res) => {
     res.send("Welcome to bookstore");
   });
