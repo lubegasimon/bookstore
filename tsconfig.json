@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "esModuleInterop": true,
+    "module": "commonjs",
+    "outDir": "dist",
+    "target": "es5",
+    "noUnusedLocals": true,
+    "noUnusedParameters": true
+  },
+  "exclude": [
+    "node_modules",
+     "package-lock.json"
+  ],
+  "include": ["src/**/*.ts"]
+}
