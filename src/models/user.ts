@@ -5,6 +5,7 @@ export interface UserAttributes {
   username: string;
   email: string;
   password: string;
+  confirmPassword: string;
   createdAt?: string;
   updatedAt?: string;
 }
@@ -14,6 +15,7 @@ interface UserModel extends Model {
   username: string;
   email: string;
   password: string;
+  confirmPassword: string;
   createdAt?: string;
   updatedAt?: string;
 }
@@ -27,9 +29,12 @@ export default function initUser(sequelize: Sequelize, dataTypes): StaticModel {
   const userAttrs: SequelizeAttributes<UserAttributes> = {
     username: dataTypes.STRING,
     email: dataTypes.STRING,
-    password: dataTypes.STRING
+    password: dataTypes.STRING,
+    confirmPassword: dataTypes.STRING
   };
-  const User: StaticModel = <StaticModel>sequelize.define("User", userAttrs, {});
+  const User: StaticModel = <StaticModel>(
+    sequelize.define("User", userAttrs, {})
+  );
   User.associate = function(_models) {
     // associations can be defined here
   };

@@ -7,6 +7,7 @@
     "compile": "tsc --project tsconfig.json",
     "dev": "npm run compile && npm run start",
     "prettier": "prettier-tslint fix src/**/*.ts",
+    "sequelize": "npx sequelize-cli",
     "start": "npm run compile && nodemon ./dist/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -45,6 +46,7 @@
     "prettier": "1.18.2",
     "prettier-tslint": "^0.4.2",
     "pretty-quick": "^1.11.1",
+    "sequelize-cli": "^5.5.0",
     "ts-node": "^8.3.0",
     "tslint": "^5.18.0",
     "typescript": "^3.5.3"
