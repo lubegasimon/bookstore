@@ -3,6 +3,7 @@
     "allowJs": true,
     "module": "commonjs",
     "outDir": "dist",
+    "jsx": "react",
     "target": "es5",
     "noUnusedLocals": true,
     "noUnusedParameters": true
