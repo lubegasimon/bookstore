@@ -10,7 +10,7 @@ interface Credentials {
 
 interface Props {
   loading?: boolean;
-  onSubmit: (input: Credentials) => void;
+  onSubmit?: (input: Credentials) => void;
 }
 
 export default class SignUp extends React.Component<Props, Credentials> {
