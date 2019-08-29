@@ -4,12 +4,15 @@
   "description": "A store for your books to read",
   "main": "dist/server.js",
   "scripts": {
+    "build": "webpack --config webpack.config.js",
     "compile": "tsc --project tsconfig.json",
     "dev": "npm run compile && npm run start",
-    "prettier": "prettier-tslint fix src/**/*.ts",
+    "prettier": "prettier-tslint fix '{src,frontend}/**/*.(ts|tsx)'",
     "sequelize": "npx sequelize-cli",
     "start": "npm run compile && nodemon ./dist/server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook": "start-storybook -s ./static -p 6006",
+    "build-storybook": "build-storybook"
   },
   "repository": {
     "type": "git",
@@ -33,23 +36,44 @@
     "express": "^4.17.1",
     "pg": "^7.12.0",
     "pg-hstore": "^2.3.3",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^0.87.3",
     "sequelize": "^5.12.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@storybook/addon-actions": "^5.1.10",
+    "@storybook/addon-info": "^5.1.10",
+    "@storybook/addon-links": "^5.1.10",
+    "@storybook/addons": "^5.1.10",
+    "@storybook/react": "^5.1.10",
     "@types/bluebird": "^3.5.27",
     "@types/body-parser": "^1.17.0",
     "@types/express": "^4.17.0",
     "@types/node": "^12.7.0",
+    "@types/react": "^16.9.1",
+    "@types/react-dom": "^16.8.5",
+    "@types/semantic-ui": "^2.2.7",
     "@types/sequelize": "^4.28.4",
+    "@types/storybook__react": "^4.0.2",
+    "@types/webpack-env": "^1.14.0",
+    "awesome-typescript-loader": "^5.2.1",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.2.0",
     "husky": "^3.0.2",
     "nodemon": "^1.19.1",
     "prettier": "1.18.2",
     "prettier-tslint": "^0.4.2",
     "pretty-quick": "^1.11.1",
     "sequelize-cli": "^5.5.0",
+    "source-map-loader": "^0.2.4",
     "ts-node": "^8.3.0",
     "tslint": "^5.18.0",
-    "typescript": "^3.5.3"
+    "typescript": "^3.5.3",
+    "webpack": "^4.39.2",
+    "webpack-cli": "^3.3.6"
   },
   "husky": {
     "hooks": {

@@ -3,7 +3,9 @@
     "allowJs": true,
     "module": "commonjs",
     "outDir": "dist",
-    "target": "es5",
+    "jsx": "react",
+    "sourceMap": true,
+    "target": "es6",
     "noUnusedLocals": true,
     "noUnusedParameters": true
   },
@@ -11,5 +13,5 @@
     "node_modules",
      "package-lock.json"
   ],
-  "include": ["src/**/*.ts", "src/migrations/20190730133253-create-user.ts", "src/migrations/20190730133253-add-column-to-user.ts"]
+  "include": ["src/**/*.ts", "frontend/**/*.tsx"]
 }
